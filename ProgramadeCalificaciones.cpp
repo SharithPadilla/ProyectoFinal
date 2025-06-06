@@ -114,23 +114,30 @@ int main (){
               float Nota = notasMatrix[i][j] = ValidarNota("Ingrese la nota del estudiante #" + to_string(i + 1) + ", examen #" + to_string(j + 1) + ": ");
 
               for (int i = 0; i < N; i++) {
-
-            vector<Alumno> alumnos;
+                
             Alumno a;
             float suma = 0;
                 for (int j = 0; j < 5; ++j) {
             a.notas.push_back(Nota);
             suma += Nota;
-          
-        a.promedio = suma / 5.0;
-        a.estado = (a.promedio >= 70.0) ? "APROBADOS" : "REPROBADOS";
-
-   alumnos.push_back(a); 
             }
-    imprimirReporte(alumnos, "APROBADOS");
-    imprimirReporte(alumnos, "REPROBADOS");
+
+        a.promedio = suma / 5.0;
+        if (a.promedio >= 70.0) {
+             a.estado = "APROBADOS";
+        } else {
+            a.estado = "REPROBADOS";
+        }
+
+
+alumnos.push_back(a); 
         }
     }
 }
+
+imprimirReporte(alumnos, "APROBADOS");
+imprimirReporte(alumnos, "REPROBADOS");
+
+    return 0;
 }
 
