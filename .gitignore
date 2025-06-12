@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 *.exe
 .vscode/
+=======
+# Ignorar archivos innecesarios
+>>>>>>> d38fc3ec3d2c551049c4b6d89903c4b67e5d66e6
