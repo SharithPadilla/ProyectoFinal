@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 *.exe
 .vscode/
+=======
+# Ignorar archivos innecesarios
+>>>>>>> origin/sharith
