@@ -4,8 +4,17 @@
 #include <iomanip>
 using namespace std;
 
-int main () {
+//Hacemos una estructura para almacenar los datos de un estudiante
+struct Estudiante {
 
-    return 0;
-}
+    string nombre;
+    string apellido;
+    string apellido2;
+    
+    int ciclo;
+    int cedula;
 
+    vector<float> notas;
+    float promedio;
+
+};
