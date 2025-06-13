@@ -9,7 +9,7 @@ using namespace std;
 struct Estudiante {
 
     string nombre;
-    string apellido;
+    string apellido1;
     string apellido2;
     
     int ciclo;
@@ -77,6 +77,34 @@ void imprimirEncabezado(int numero) {
 }
 //Empezamos la funcion principal
 int main() {
+    vector<Estudiante>estudiantes;
+    int cantidadMaxima =
+    leerEnteroPositivo("Cuantos alumnos desea evaluar en total?");
+    int contador = 0;
+
+    while (contador < cantidadMaxima){
+        imprimirEncabezado(contador + 1);
+        Estudiante est;
+
+        cout << "Ingrese primer nombre: ";
+        cin >> est.nombre;
+
+
+        cout << "Ingrese primer apellido: ";
+        cin >> est.apellido1;
+
+        cout << "Ingrese segundo apellido: ";
+        cin >> est.apellido2;
+
+        est.ciclo = leerEnteroPositivo ("Ingrese ciclo de estudio (numero entero > 0): ");
+        est.cedula = leerEnteroPositivo ("Ingrese numero de cedula (sin guiones): ");
+
+        cout << "Ingrese las 5 calificaciones de examenes: \n";
+        for (int j = 1; j <= 5; ++j){
+            float nota = leerNotaValida ("Nota del examen #" + to_string(j) + ":");
+            est.notas.push_back(nota);
+        }
+    }
 
     
 }
