@@ -4,6 +4,7 @@
 #include <iomanip>
 using namespace std;
 
+
 //Hacemos una estructura para almacenar los datos de un estudiante
 struct Estudiante {
 
@@ -13,6 +14,7 @@ struct Estudiante {
     
     int ciclo;
     int cedula;
+
 
     vector<float> notas;
     float promedio;
@@ -51,4 +53,30 @@ float leerNotaValida(const string & mensaje){
             return nota;
         }
     }
+}
+//hacemos una función pra validar una respuesta ingresando 1 o 2
+int leerOpcion(const string & mensaje) {
+    int opcion;
+    while (true) {
+        cout << mensaje;
+        cin >> opcion;
+        if (cin.fail() || (opcion != 1 && opcion != 2)) {
+            cout << "Error: Por favor, ingrese 1 o 2." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            return opcion;
+        }
+    }
+}
+            
+//Hacemos funcion que nos permita imprimir un encabezado con estilo colorido
+void imprimirEncabezado(int numero) {
+    cout << "\n\x1B[34m======== Ingreso de  datos de los estudiantes #" << numero << " ========\x1B[0m\n";
+
+}
+//Empezamos la funcion principal
+int main() {
+
+    
 }
