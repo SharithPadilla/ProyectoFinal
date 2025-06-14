@@ -94,7 +94,7 @@ int main() {
         cin >> est.apellido1;
 
         cout << "Ingrese segundo apellido: ";
-        cin >> est.apellido2; 
+        cin >> est.apellido2;
 
         est.ciclo = leerEnteroPositivo ("Ingrese ciclo de estudio (numero entero > 0): ");
         est.cedula = leerEnteroPositivo ("Ingrese numero de cedula (sin guiones): ");
@@ -104,59 +104,7 @@ int main() {
             float nota = leerNotaValida ("Nota del examen #" + to_string(j) + ":");
             est.notas.push_back(nota);
         }
+    }
+
     
-
-float suma = 0;
-for (float nota:est.notas){
-    suma+=nota;
 }
-est.promedio=suma/est.notas.size();
-estudiantes.push_back(est);
-contador++; 
-    }
-
-vector<Estudiante> aprobados, reprobados;
-for (const Estudiante& e:estudiantes){
-    if (e.promedio >=70.0) {
-        aprobados.push_back(e);
-    }
-    else {
-        reprobados.push_back(e);
-    }
-}
-
-cout<<"\n\x1B[31m====================APROBADOS====================\x1B[0m\n";
-cout<< left<<setw(25)<<"Nombre completo"
-<<setw(10)<<"Ciclo"
-<<setw(15)<<"Cedula"
-<<setw(10)<<"Promedio\n";
-cout << "--------------------------------------------------\n";
-
-
-for(const Estudiante& e:aprobados){
-cout <<">"<< left
-<<setw(25)<<(e.nombre+""+e.apellido1+""+e.apellido2)
-<<setw(10)<<e.ciclo
-<<setw(15)<<e.cedula
-<<fixed<<setprecision(2) <<e.promedio<<"\n";
-}
-
-
-cout<<"\n===================REPROBADOS===================\x1B[0m\n";
-cout <<left<< setw(25)<<"Nombre completo "
-<<setw(10)<<"Ciclo"
-<<setw(15)<<"Cedula"
-<<setw(10)<<"Promedio\n";
-cout <<"--------------------------------------------------\n";
-for(const Estudiante& e:reprobados){
-    cout<<">"<<left
-    <<setw(25)<<(e.nombre+""+e.apellido1+""+e.apellido2)
-    <<setw(10)<<e.ciclo
-    <<setw(10)<<e.cedula
-    <<fixed<<setprecision(2)<<e.promedio<<"\n";
-
-    return 0;
-}
-
-}
-
